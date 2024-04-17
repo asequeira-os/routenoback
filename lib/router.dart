@@ -12,14 +12,20 @@ final routeClasses = [OuterAPage, InnerA1Page, OuterBPage, InnerA2Page];
 class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: OuterARoute.page, initial: true, children: [
-          AutoRoute(page: InnerA1Route.page, initial: true),
-          AutoRoute(page: InnerA2Route.page),
-        ]),
+        AutoRoute(
+          page: OuterARoute.page,
+          initial: true,
+          children: [
+            AutoRoute(page: InnerA1Route.page, initial: true),
+            AutoRoute(page: InnerA2Route.page),
+          ],
+        ),
         AutoRoute(
           page: OuterBRoute.page,
-          //initial: true,
-          //children: [AutoRoute(page: InnerA1Route.page, initial: true)]
+          children: [
+            AutoRoute(page: InnerA1Route.page, initial: true),
+            AutoRoute(page: InnerA2Route.page),
+          ],
         ),
       ];
 }

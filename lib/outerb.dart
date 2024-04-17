@@ -13,15 +13,16 @@ class OuterBPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Outer B"),
       ),
-      body: const Column(
+      body: Column(
         children: [
-          Text("Hello B"),
-          NavLink(
+          const Text("Hello B"),
+          const NavLink(
             label: "outer A",
             route: OuterARoute(),
             push: false,
           ),
-          //AutoRouter(), //place for child routes
+          Text("${context.router.stack.length}"),
+          const AutoRouter(), //place for child routes
         ],
       ),
     );
