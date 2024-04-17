@@ -13,22 +13,23 @@ class OuterAPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Outer A"),
       ),
-      body: const Column(
+      body: Column(
         children: [
-          Text("Hello"),
-          NavLink(label: "inner A 1", route: InnerA1Route()),
-          NavLink(label: "inner A 2", route: InnerA2Route()),
-          NavLink(
+          const Text("Hello"),
+          const NavLink(label: "inner A 1", route: InnerA1Route()),
+          const NavLink(label: "inner A 2", route: InnerA2Route()),
+          const NavLink(
             label: "outer A",
             route: OuterARoute(),
             push: false,
           ),
-          NavLink(
+          const NavLink(
             label: "outer B",
             route: OuterBRoute(),
             push: false,
           ),
-          AutoRouter(), //place for child routes
+          Text("${context.router.stack.length}"),
+          const AutoRouter(), //place for child routes
         ],
       ),
     );
